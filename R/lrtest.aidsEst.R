@@ -34,9 +34,9 @@ lrtest.aidsEst <- function( object, ... ) {
       } else {
          result <- paste( result, ", unrestricted", sep = "" )
       }
-      if( !is.null( aidsEstObject$call$shifterNames ) ) {
+      if( !is.null( aidsEstObject$sMeans ) ) {
          result <- paste( result, ", ",
-            length( aidsEstObject$call$shifterNames ) - 1,
+            length( aidsEstObject$sMeans ),
             " demand shifter(s)", sep = "" )
       }
       result <- paste( objectName, " (", result, ")", sep = "" )
