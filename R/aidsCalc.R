@@ -121,7 +121,7 @@ aidsCalc <- function( priceNames, totExpName, coef, data,
          logTotExp <- log( data[ i, totExpName ] )
          shifterValues <- as.numeric( data[ i, shifterNames ] )
          if( all( !is.na( c( logPrices, logTotExp ) ) ) ) {
-            numerator <- coef$alpha + coef$gamma %*% logPrices + 
+            numerator <- coef$alpha + coef$gamma %*% logPrices +
                coef$beta * logTotExp
             if( nShifter > 0 ) {
                numerator <- numerator + coef$delta %*% shifterValues
@@ -135,7 +135,7 @@ aidsCalc <- function( priceNames, totExpName, coef, data,
       logTotExp <- log( data[ 1, totExpName ] )
       shifterValues <- as.numeric( data[ 1, shifterNames ] )
       if( all( !is.na( c( logPrices, logTotExp ) ) ) ) {
-         numerator <- coef$alpha + coef$gamma %*% logPrices + 
+         numerator <- coef$alpha + coef$gamma %*% logPrices +
             coef$beta * logTotExp
          if( nShifter > 0 ) {
             numerator <- numerator + coef$delta %*% shifterValues
@@ -162,7 +162,7 @@ aidsCalc <- function( priceNames, totExpName, coef, data,
          logTotExp <- log( data[ i, totExpName ] )
          shifterValues <- as.numeric( data[ i, shifterNames ] )
          if( all( !is.na( c( prices, logTotExp ) ) ) ) {
-            numerator <- coef$alpha + coef$gamma %*% log( prices ) + 
+            numerator <- coef$alpha + coef$gamma %*% log( prices ) +
                coef$beta * logTotExp
             if( nShifter > 0 ) {
                numerator <- numerator + coef$delta %*% shifterValues
