@@ -1,6 +1,6 @@
 aidsElas <- function( coef, prices = NULL, shares = NULL, totExp = NULL,
    method = "AIDS", priceIndex = "TL", basePrices = NULL, baseShares = NULL,
-   quantNames = NULL, priceNames = NULL, shifterValues = NULL, 
+   quantNames = NULL, priceNames = NULL, shifterValues = NULL,
    coefCov = NULL, df = NULL ) {
 
    if( !is.null( coef$delta ) ) {
@@ -18,7 +18,7 @@ aidsElas <- function( coef, prices = NULL, shares = NULL, totExp = NULL,
             " of 'coef$delta'" )
       }
       for( i in 1:length( coef$alpha ) ) {
-         coef$alpha[i] <- coef$alpha[i] + 
+         coef$alpha[i] <- coef$alpha[i] +
             crossprod( coef$delta[i,], shifterValues )
       }
       nShifter <- ncol( coef$delta )
@@ -31,9 +31,9 @@ aidsElas <- function( coef, prices = NULL, shares = NULL, totExp = NULL,
    coefCheckResult <- .aidsCheckCoef( coef, variables = list(
       list( ifelse( is.null( prices ), NA, length( prices ) ), "prices", "goods" ),
       list( ifelse( is.null( shares ), NA, length( shares ) ), "shares", "goods" ),
-      list( ifelse( is.null( quantNames ), NA, length( quantNames ) ), 
+      list( ifelse( is.null( quantNames ), NA, length( quantNames ) ),
          "quantNames", "goods" ),
-      list( ifelse( is.null( priceNames ), NA, length( priceNames ) ), 
+      list( ifelse( is.null( priceNames ), NA, length( priceNames ) ),
          "priceNames", "goods" ) ) )
    if( !is.null( coefCheckResult ) ){
       stop( coefCheckResult )
