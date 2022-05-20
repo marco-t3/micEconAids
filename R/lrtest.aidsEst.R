@@ -10,8 +10,8 @@ lrtest.aidsEst <- function( object, ... ) {
       stop( "at least two arguments (objects of class 'aidsEst')",
          " are required" )
    }
-   if( class( object ) != "aidsEst" ||
-         !all( lapply( dotsList, class ) == "aidsEst" ) ){
+   if( !inherits( object, "aidsEst" ) ||
+       !all( sapply( dotsList, inherits, what = "aidsEst" ) ) ){
       stop( "all arguments must be of class 'aidsEst'" )
    }
 
